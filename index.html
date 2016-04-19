@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Airplanes Search</title>
+	<script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap3/js/bootstrap.min.js"></script>
+	<link href="assets/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap3/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<style>
+	.jumbotron {
+		height: auto;
+	}
+	.v-offset {
+		margin-top: 3em;
+	}
+	img{
+		width: 200px;
+		height: 100px;
+	}
+	.list-group-item {
+		height: 70px;
+		cursor: pointer;
+	}
+	#item-current {
+		background-color: #d2e0e4;
+	}
+	.row > .col-md-4{
+		height: 180px;
+		max-height: 200px;
+		cursor: pointer;
+		border: 1px solid;
+		margin: 5px;
+		width: 280px;
+		padding: 20px;
+	}
+	.row > .col-md-4:hover {
+		background-color: #b3cc99;
+	}
+	.row > .col-md-4 > span {
+		display: block;
+	}
+	.row > .col-md-4 > a {
+		display: block;
+		position: absolute;
+		bottom: 15px;
+	}
+	.row > .col-md-4 > a.btn {
+		right: 15px;
+	}
+	.col-md-12 > .btn-warning {
+		width: 100%;
+	}
+	#edit-block td > a {
+		cursor: pointer;
+	}
+</style>
+<body role="document">
+	<br/>
+	<div class="container">
+		<div class="jumbotron">
+		<a class="btn btn-warning btn-lg" id="load-data-btn" onclick="loadData()">LOAD DATA</a>
+		<a class="btn btn-warning btn-lg" id="edit-data-btn" href='edit.html'>EDIT DATA</a>
+	        <div class="row" id="main-block" hidden>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4 item-first by-seats" onclick="prev('seats')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&#8600;</a>
+							<a class="btn btn-warning" onclick="first('seats')">First</a>	
+						</div>
+						<div class="col-md-4 item-first by-price" onclick="prev('price')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&darr;</a>
+							<a class="btn btn-warning" onclick="first('price')">First</a>
+						</div>
+						<div class="col-md-4 item-last by-weight" onclick="next('weight')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&#8599;</a>
+							<a class="btn btn-warning" onclick="last('weight')">Last</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 item-first by-production" onclick="prev('production')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&rarr;</a>
+							<a class="btn btn-warning" onclick="first('production')">First</a>
+						</div>
+						<div class="col-md-4" id="item-current">
+							<h4 class="list-group-item-heading"></h4>
+							<img src=""/>
+						</div>
+						<div class="col-md-4 item-last by-production" onclick="next('production')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&rarr;</a>
+							<a class="btn btn-warning" onclick="last('production')">Last</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 item-first by-weight" onclick="prev('weight')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&#8599;</a>
+							<a class="btn btn-warning" onclick="first('weight')">First</a>	
+						</div>
+						<div class="col-md-4 item-last by-price" onclick="next('price')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&darr;</a>
+							<a class="btn btn-warning" onclick="last('price')">Last</a>
+						</div>
+						<div class="col-md-4 item-last by-seats" onclick="next('seats')">
+							<h4 class="list-group-item-heading"></h4>
+							<span class="list-group-item-text"></span>
+							<a>&#8600;</a>
+							<a class="btn btn-warning" onclick="last('seats')">Last</a>	
+						</div>
+					</div>
+				</div>				
+			</div>
+      	</div>		
+	</div>	
+</body>
+<script src="double-list.js"></script>
+<script src="list.js"></script>
+<script src="core.js"></script>
+</html>

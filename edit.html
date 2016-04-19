@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Airplanes Search</title>
+	<script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap3/js/bootstrap.min.js"></script>
+	<link href="assets/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap3/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<style>
+	.jumbotron {
+		height: auto;
+	}
+	.v-offset {
+		margin-top: 3em;
+	}
+	img{
+		width: 200px;
+		height: 100px;
+	}
+	.list-group-item {
+		height: 70px;
+		cursor: pointer;
+	}
+	#item-current {
+		background-color: #d2e0e4;
+	}
+	.row > .col-md-4{
+		height: 180px;
+		max-height: 200px;
+		cursor: pointer;
+		border: 1px solid;
+		margin: 5px;
+		width: 280px;
+		padding: 20px;
+	}
+	.row > .col-md-4:hover {
+		background-color: #b3cc99;
+	}
+	.row > .col-md-4 > span {
+		display: block;
+	}
+	.row > .col-md-4 > a {
+		display: block;
+		position: absolute;
+		bottom: 15px;
+	}
+	.row > .col-md-4 > a.btn {
+		right: 15px;
+	}
+	.col-md-12 > .btn-warning {
+		width: 100%;
+	}
+	#edit-block td > a {
+		cursor: pointer;
+	}
+</style>
+<body role="document">
+	<br/>
+	<div class="container">
+		<div class="jumbotron">     
+			<div class="row" id="edit-block">
+				<h2>Airplanes database</h2>
+				<a class="btn btn-primary" href="index.html">BACK</a>        
+				<table class="table table-striped">
+				<thead>
+				  <tr>
+				    <th>ID</th>
+				    <th>Name</th>
+				    <th>Price</th>
+				    <th>Production</th>
+				    <th>Seats</th>
+				    <th>Weight</th>
+				    <th>Image</th>
+				    <th></th>
+				    <th></th>
+				  </tr>
+				</thead>
+				<tbody id="planes-table-body">
+				  
+				</tbody>
+				</table>
+			</div>
+      	</div>		
+	</div>	
+
+	<!-- Modal -->
+	<div id="edit-modal-window" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title"></h4>
+	      </div>
+	      <div class="modal-body">
+	        <form role="form">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+					<label for="price">Price:</label>
+					<input type="text" class="form-control" id="price">
+				</div>
+				<div class="form-group">
+					<label for="production">Production:</label>
+					<input type="text" class="form-control" id="production">
+				</div>
+				<div class="form-group">
+					<label for="seats">Seats:</label>
+					<input type="text" class="form-control" id="seats">
+				</div>
+				<div class="form-group">
+					<label for="weight">Weight:</label>
+					<input type="text" class="form-control" id="weight">
+				</div>
+				<div class="form-group">
+					<label for="image">Image:</label>
+					<input type="text" class="form-control" id="image">
+				</div>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	      	<button type="button" class="btn btn-success" id="save-plain-btn">Save</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</body>
+<script src="double-list.js"></script>
+<script src="list.js"></script>
+<script src="core.js"></script>
+<script src="edit.js"></script>
+</html>
